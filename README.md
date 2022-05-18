@@ -1,0 +1,2 @@
+# Projekt C#/WPF - 'Steam'
+Jednoduchá aplikace ve WPF umožňující uživateli prohlížet hry v obchodě, označit je jako oblíbené, zobrazit a editovat svůj profil atd. Projekt do předmětu Tvorba uživatelských rozhraní.

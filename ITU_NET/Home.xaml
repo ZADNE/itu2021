@@ -1,0 +1,73 @@
+﻿<Page x:Class="ITU_NET.Home"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ITU_NET"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Home" Background="White">
+    <Page.Resources>
+        <Style TargetType="{x:Type ItemsControl}">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ItemsControl">
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="{TemplateBinding HorizontalAlignment}">
+                            <TextBlock Style="{StaticResource Standard}" FontSize="{StaticResource HeaderFont}" Margin="5, 0"
+                                       Text="{TemplateBinding Tag}" HorizontalAlignment="{TemplateBinding HorizontalAlignment}"/>
+                            <ItemsPresenter/>
+                        </StackPanel>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+    <Grid>
+        <Border BorderBrush="Black" BorderThickness="1, 0, 1, 1"/>
+        <ScrollViewer
+            HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"
+            HorizontalAlignment="Stretch">
+            <StackPanel>
+                <ItemsControl HorizontalAlignment="Stretch" Margin="5"
+                    ItemsSource="{Binding GameExtracts}" Tag="Trending now" >
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Padding="5" Margin="0, 5, 0, 5">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="300"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Border BorderBrush="Black" BorderThickness="1" Grid.Column="0" Grid.RowSpan="2" Margin="0, 0, 5, 0">
+                                        <Image Source="{Binding Img}"/>
+                                    </Border>
+                                    <Rectangle Grid.Column="1" Grid.RowSpan="2">
+                                        <Rectangle.Fill>
+                                            <SolidColorBrush Color="{StaticResource BackgroundColor}"/>
+                                        </Rectangle.Fill>
+                                    </Rectangle>
+                                    <TextBlock Style="{StaticResource Standard}" FontSize="{StaticResource HeaderFont}"
+                                       Text="{Binding Name}" Grid.Column="1" VerticalAlignment="Top" Margin="5, 0, 5, 0"/>
+                                    <Button Content="See more..." FontSize="{StaticResource BiggerFont}" Grid.Column="1" Grid.Row="1" Tag="{Binding Name}" Click="Trend_Click"/>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

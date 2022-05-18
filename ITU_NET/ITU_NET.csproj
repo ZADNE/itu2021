@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <WarningLevel>2</WarningLevel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\Borderlands2.jpg" />
+    <None Remove="Images\Factorio.jpg" />
+    <None Remove="Images\Loading.png" />
+    <None Remove="Images\OMD.jpg" />
+    <None Remove="Images\OMD2.jpg" />
+    <None Remove="Images\OMDU.jpg" />
+    <None Remove="Images\return.png" />
+    <None Remove="Images\Terraria.jpg" />
+    <None Remove="Images\TF2.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CustomControls\CustomControls.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\Borderlands2.jpg" />
+    <Resource Include="Images\Factorio.jpg" />
+    <Resource Include="Images\Loading.png" />
+    <Resource Include="Images\OMD.jpg" />
+    <Resource Include="Images\OMD2.jpg" />
+    <Resource Include="Images\OMDU.jpg" />
+    <Resource Include="Images\return.png" />
+    <Resource Include="Images\Terraria.jpg" />
+    <Resource Include="Images\TF2.jpg" />
+  </ItemGroup>
+
+</Project>

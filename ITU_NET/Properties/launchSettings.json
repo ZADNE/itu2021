@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ITU_NET": {
+      "commandName": "Project",
+      "workingDirectory": "$(SolutionDir)$(ProjectName)\\"
+    }
+  }
+}
